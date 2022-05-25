@@ -1,0 +1,495 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'facebook/css/bootstrap.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'facebook/mycss/profile.css'%}" />
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <title>Profile</title>
+</head>
+
+<body>
+
+    <div class="container-fluid sticky-top g-0">
+        <!-- Nav -->
+        <nav style="background-color: white;">
+            <div class="row ms-2 pt-2">
+                <div class="col-4">
+                    <div class="text-start" id="header-logo-search">
+                        <a href="{% url 'facebook:profile' user.id %}">
+                            <img height="40px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="" class="logo">
+                        </a>
+                        <input type="text" name="" id="" class="form-control ms-2 rounded-pill" placeholder="Tìm kiếm trên Facebook" style="background-color: #F0F2F5;">
+                    </div>
+
+                </div>
+                <div class="col-4">
+                    <ul class="nav justify-content-center" id="middle-nav-item">
+                        <div class="col">
+                            <li class="nav-item" style="margin-right: 10px">
+                                <a class="nav-link" href="#">
+                                    <i class="fa-solid fa-house fa-2x"></i>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="col">
+                            <li class="nav-item" style="margin-right: 10px">
+                                <a class="nav-link" href="#"> <i class="fa-solid fa-video fa-2x"></i></a>
+                            </li>
+                        </div>
+                        <div class="col">
+                            <li class="nav-item" style="margin-right: 10px">
+                                <a class="nav-link" href="#"><i class="fa-solid fa-store fa-2x"></i></a>
+                            </li>
+                        </div>
+                        <div class="col">
+                            <li class="nav-item" style="margin-right: 10px">
+                                <a class="nav-link " href="#"><i class="fa-solid fa-gamepad fa-2x"></i></a>
+                            </li>
+                        </div>
+
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col-6 d-flex">
+                            <div class="col-6"></div>
+                            <div class="col-6 text-center">
+                                {% if request.user.is_authenticated %}
+                                <a href="" class="d-flex text-decoration-none">
+                                    <div class="d-flex">
+                                        <img height="40" src="https://play-lh.googleusercontent.com/IeNJWoKYx1waOhfWF6TiuSiWBLfqLb18lmZYXSgsH1fvb8v1IYiZr5aYWe0Gxu-pVZX3" alt="" id="avatar" class="rounded-circle shadow-4">
+                                        <div class="" style="color: black;">{{user.name}}
+                                        </div>
+                                    </div>
+                                </a>
+                                {% else %}
+                                <a href="{% url 'facebook:login'%}" class="d-flex text-decoration-none">
+                                      Dang nhap
+                              </a> {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-6 d-flex py-2 px-2">
+                            <div class="col btn-group bg-secondary">
+                                <i class="fa-solid fa-bars" id="right-nav-bar"></i>
+                            </div>
+                            <div class="col btn-group bg-secondary" id="right-nav-bar">
+                                <i class="fa-brands fa-facebook-messenger"> 
+                              </i>
+                            </div>
+                            <div class="col btn-group bg-secondary" id="right-nav-bar">
+                                <i class="fa-solid fa-bell">
+                              </i>
+                            </div>
+                            <div class="col btn-group bg-secondary" id="right-nav-bar">
+                                <i class="fa-solid fa-caret-down" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;"></i>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="{% url 'facebook:logout'%}">Đăng xuất</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </nav>
+        </div>
+
+
+        <!-- End Nav -->
+        <!-- Body -->
+        <!-- Body Left -->
+        <div class="container">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col">
+                    <div class="main">
+                        <div class="main__wallpaper">
+                            <img src="{{user.wall.url}}" alt="" style="width: 940px; height: 350px" class="rounded-bottom" />
+                        </div>
+                        <div class="main__profile__info d-flex">
+                            <div class="main__profile__info__avatar">
+                                <img style="
+                    width: 168px;
+                    height: 168px;
+                    position: relative;
+                    top: -100px;
+                    left: 30px;
+                  " class="main__profile__info__avatar__img rounded-circle" src="{{user.avatar.url}}" alt="" />
+                            </div>
+                            <div class="main__profile__info__box">
+                                <div class="main__profile__info__box__name position-relative">
+                                    {{user.name}}
+                                </div>
+                                <div class="main__profile__info__box__follow position-relative">
+                                    14 triệu người theo dõi • 4 đang theo dõi
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main__content px-5 position-relative" style="top: -30px">
+                            <div class="main__profile__menu d-flex text-secondary" style="font-weight: bold">
+                                <div class="main__profile__menu__item px-3">
+                                    <a class="text-secondary" style="text-decoration: none" href="">Bài viết</a
+                  >
+                </div>
+                <div class="main__profile__menu__item px-3">
+                  <a
+                    class="text-secondary"
+                    style="text-decoration: none"
+                    href=""
+                    >Giới thiệu</a
+                  >
+                </div>
+                <div class="main__profile__menu__item px-3">
+                  <a
+                    class="text-secondary"
+                    style="text-decoration: none"
+                    href=""
+                    >Ảnh</a
+                  >
+                </div>
+                <div class="main__profile__menu__item px-3">
+                  <a
+                    class="text-secondary"
+                    style="text-decoration: none"
+                    href=""
+                    >Video</a
+                  >
+                </div>
+                <div class="main__profile__menu__item px-3 flex-grow-1">
+                  <a
+                    class="text-secondary"
+                    style="text-decoration: none"
+                    href=""
+                  >
+                    Đang theo dõi</a
+                  >
+                </div>
+                <div class="main__profile__menu__item px-3">
+                  <div
+                    class="main__profile__menu__item__more rounded-2 text-center"
+                    style="width: 48px; height: 36px; background-color: #e4e6eb"
+                  >
+                    <i
+                      style="top: 30%"
+                      class="text-black fa-solid fa-ellipsis position-relative"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+              <hr class="position-relative" style="top: -75px" />
+            </div>
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+    <!-- End Body Left -->
+    <!-- Body Right -->
+    <div
+      class="container-fluid position-relative"
+      style="background-color: #f0f2f5; top: -20px"
+    >
+      <div class="container">
+        <div class="row pt-3">
+          <div class="col-2"></div>
+          <div class="col px-5">
+            <div class="row">
+              <div class="col-5">
+                <div class="main__introduce">
+                  <div class="main__introduce__box rounded-3 bg-white">
+                    <div
+                      class="main__introduce__box__title ps-3 pt-3"
+                      style="font-weight: bolder; font-size: 20px"
+                    >
+                      Giới thiệu
+                    </div>
+                    <div class="main__introduce__box__user text-center pt-2" id="main__introduce__box__user">
+                      <div class="main__introduce__box__user__bio px-4">
+                        {{user.bio}}
+                      </div>
+                      <div class="main__introduce__box__user__link">
+                        <a href="{{user.website}}" style="text-decoration: none"
+                          >{{user.website}}</a
+                        >
+                      </div>
+                      <hr class="px-2" />
+                    </div>
+                    <div class="main__introduce__box__menu text-secondary">
+                      <div class="row my-2">
+                        <div class="col-2 px-4">
+                          <i
+                            style="font-size: 20px"
+                            class="fa-solid fa-circle-info"
+                          ></i>
+                        </div>
+                        <div class="col pe-1 text-black">
+                          <b>Trang</b> Nhạc sỹ/Ban nhạc
+                        </div>
+                      </div>
+                      <div class="row my-2">
+                        <div class="col-2 px-4">
+                          <i
+                            style="font-size: 20px"
+                            class="fa-solid fa-phone"
+                          ></i>
+                        </div>
+                        <div class="col text-black">{{user.phoneNumber}}</div>
+                      </div>
+                      <div class="row my-2">
+                        <div class="col-2 px-4">
+                          <i
+                            style="font-size: 20px"
+                            class="fa-solid fa-envelope"
+                          ></i>
+                        </div>
+                        <div class="col text-black">{{user.email}}</div>
+                      </div>
+                      <div class="row my-2">
+                        <div class="col-2 px-4">
+                          <i
+                            style="font-size: 20px"
+                            class="fa-solid fa-globe"
+                          ></i>
+                        </div>
+                        <div class="col text-black">
+                          <a href="" style="text-decoration: none"
+                            >{{user.website}}</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main__introduce__box rounded-3 bg-white mt-3">
+                    <div class="d-flex mb-2">
+                      <div
+                        class="ps-3 pt-3 flex-grow-1"
+                        style="font-weight: bolder; font-size: 20px"
+                      >
+                        Ảnh
+                      </div>
+                      <div class="px-3 pt-3">
+                        <a
+                          href=""
+                          style="text-decoration: none; font-size: 16px"
+                          >Xem tất cả ảnh</a
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex my-1"
+                      style="padding-right: 16px; padding-left: 16px"
+                    >
+                      <div class="ms-1">
+                        <img
+                          src="https://smaller-pictures.appspot.com/images/dreamstime_xxl_65780868_small.jpg"
+                          alt=""
+                          height="106px"
+                          width="106px"
+                        />
+                      </div>
+                      <div class="ms-1">
+                        <img
+                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmyWPmQ7Ux4yYwaAPp38lZ4vT3Kl4qm3Gtag&usqp=CAU"
+                          alt=""
+                          height="106px"
+                          width="106px"
+                        />
+                      </div>
+                      <div class="ms-1">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/7/71/Small_pie.svg"
+                          alt=""
+                          height="106px"
+                          width="106px"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex my-1"
+                      style="padding-right: 16px; padding-left: 16px"
+                    >
+                      <div class="ms-1">
+                        <img
+                          src="https://smaller-pictures.appspot.com/images/dreamstime_xxl_65780868_small.jpg"
+                          alt=""
+                          height="106px"
+                          width="106px"
+                        />
+                      </div>
+                      <div class="ms-1">
+                        <img
+                          src="https://pbs.twimg.com/profile_images/875749462957670400/T0lwiBK8_400x400.jpg"
+                          alt=""
+                          height="106px"
+                          width="106px"
+                        />
+                      </div>
+                      <div class="ms-1">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/7/71/Small_pie.svg"
+                          alt=""
+                          height="106px"
+                          width="106px"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="d-flex my-1 pb-3"
+                      style="padding-right: 16px; padding-left: 16px"
+                    >
+                      <div class="ms-1">
+                        <img
+                          src="https://smaller-pictures.appspot.com/images/dreamstime_xxl_65780868_small.jpg"
+                          alt=""
+                          height="106px"
+                          width="106px"
+                        />
+                      </div>
+                      <div class="ms-1">
+                        <img
+                          src="https://pbs.twimg.com/profile_images/875749462957670400/T0lwiBK8_400x400.jpg"
+                          alt=""
+                          height="106px"
+                          width="106px"
+                        />
+                      </div>
+                      <div class="ms-1">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/7/71/Small_pie.svg"
+                          alt=""
+                          height="106px"
+                          width="106px"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="text-secondary mb-3" style="font-weight: bold">
+                  Bài viết đã ghim
+                </div>
+                {% for post in posts %}
+                <div class="main__content__post rounded-2 bg-white">
+                  <div class="main__content__post__author d-flex px-3 pt-3">
+                    <div class="main__content__post__author__avatar">
+                      <img
+                        src="{{post.user.avatar.url}}"
+                        alt=""
+                        width="40px"
+                        height="40px"
+                        class="rounded-circle"
+                      />
+                    </div>
+                    <div class="mx-2">
+                      <div class="main__content__post__author__name">
+                        <b>{{post.user.name}}</b>
+                      </div>
+                      <div
+                        class="main__content__post__author__time text-primary"
+                        style="font-size: 14px"
+                      >
+                        {{post.created_at|timesince}} ago
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main__content__post__body px-3 py-3">
+                    {{post.post}}
+                  </div>
+                  <div class="main__content__post__image border">
+                    <img
+                      width="100%"
+                      height="561px"
+                      src="{{post.images.url}}"
+                      alt=""
+                    />
+                  </div>
+                  <div class="d-flex bd-highlight mb-3" style="color: #65676b">
+                    <!-- Like, emoji -->
+                    <div class="me-auto p-2 bd-highlight">
+                      <i class="fa-solid fa-thumbs-up text-primary mx-1"> </i>
+                      123
+                    </div>
+                    <!-- Comment - Share -->
+                    <div class="p-2 bd-highlight d-flex" style="color: #65676b">
+                      <div id="comment">12312 bình luận</div>
+                      <div id="share" class="ms-3">123 lượt chia sẻ</div>
+                    </div>
+                  </div>
+                  <hr class="px-3 position-relative" style="top: -15px" />
+                  <div
+                    id="tuong-tac"
+                    class="d-flex px-3 text-center position-relative"
+                    style="top: -25px"
+                  >
+                    <div id="thich" class="col-4">
+                      <i class="fa-solid fa-thumbs-up"></i>Thích
+                    </div>
+                    <div id="binhluan" class="col-4">
+                      <i class="fa-solid fa-message"></i> Bình luận
+                    </div>
+                    <div id="chiase" class="col-4">
+                      <i class="fa-solid fa-share"></i> Chia sẻ
+                    </div>
+                  </div>
+                  <hr class="px-3 position-relative" style="top: -35px" />
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="col-1"></div>
+        </div>
+      </div>
+    </div>
+    <!-- End Body Right -->
+    <!-- End Body -->
+    <!-- Footer -->
+    {% if not request.user.is_authenticated %}
+    <div class="container-fluid bg-white sticky-bottom border-top">
+      <div class="footer text-center" style="padding: 12px">
+        <div class="my-3" style="font-weight: 700; font-size: 24px">
+          Kết nối với M-TP trên Facebook
+        </div>
+        <div class="d-flex justify-content-center">
+          <a
+            class="btn mx-3"
+            href="#"
+            role="button"
+            style="
+              font-weight: 600;
+              width: 230px;
+              height: 40px;
+              background-color: #0d6efd;
+              color: white;
+            "
+            >Đăng nhập</a
+          >
+          <div class="text-secondary position-relative" style="top: 5px">
+            hoặc
+          </div>
+          <a
+            class="btn mx-3"
+            href="#"
+            role="button"
+            style="
+              background-color: #31a24c;
+              color: white;
+              font-weight: 600;
+              width: 230px;
+              height: 40px;
+            "
+          >
+            Tạo tài khoản mới</a
+          >
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+  </body>
+</html>

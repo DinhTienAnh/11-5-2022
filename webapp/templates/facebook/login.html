@@ -1,0 +1,58 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'facebook/css/bootstrap.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'facebook/mycss/login.css'%}">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Facebook</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="mt-5">
+
+            <form action="" method="post" style="max-width:300px;margin:auto">
+                {% csrf_token %}
+                <div class="text-center">
+
+
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="Logo" class="mt-4 mb-4 text-center" height="100">
+
+                </div>
+                <h1 class="h3 mb-3 text-center">Please sign in</h1>
+                <input type="username" name="username" id="emailAddress" class="form-control mb-3" placeholder="Email or Phone" required autofocus>
+                <input type="password" name="password" id="password" class="form-control mb-3" placeholder="Password">
+                <div class="checkbox">
+                    <label class="form-check-label">
+                        <input type="checkbox" name="" id="" value="remember-me" class="form-check-input">Remember me
+                    </label>
+                </div>
+                <div class="text-center">
+                    <a href="">Forgot password?</a>
+                </div>
+                <div class="mt-3">
+                    <button class="btn btn-lg btn-primary w-100">
+                        Login
+                    </button>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <button class="btn w-75 " id='createAccount'>
+                            <a href="{% url 'facebook:register' %}" class="link-light text-decoration-none">Create New Account</a>
+                        </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
