@@ -63,7 +63,7 @@
 
                                 <a href="{% url 'facebook:profile' user.id%}" class="d-flex text-decoration-none">
                                     <div class="d-flex">
-                                        <img height="40" src="https://play-lh.googleusercontent.com/IeNJWoKYx1waOhfWF6TiuSiWBLfqLb18lmZYXSgsH1fvb8v1IYiZr5aYWe0Gxu-pVZX3" alt="" id="avatar" class="rounded-circle shadow-4">
+                                        <img height="40" src="{{user.avatar.url}}" alt="" id="avatar" class="rounded-circle shadow-4">
                                         <div class="" style="color: black;">{{user.name}}
                                         </div>
                                     </div>
@@ -94,12 +94,15 @@
         </nav>
         {% else %}
         <!-- Nav if not logged -->
-        <nav class="d-flex py-2 ms-2" style="background-color: white;">
-            <div class="text-primary" style="font-weight:700;font-size:26px;padding-left:15px">facebook</div>
-            <input type="text" placeholder="Email hoặc điện thoại">
-            <input type="text" placeholder="Mật khẩu">
-            <div class="btn btn-primary">Đăng nhập</div>
-            <a href="">Bạn quên tài khoản ư?></a>
+        <nav class="py-2 ms-2" style="background-color: white;">
+            <form action="" class="d-flex" method="post">
+                {% csrf_token%}
+                <div class="text-primary flex-grow-1" style="font-weight:700;font-size:26px;padding-left:15px">facebook</div>
+                <input type="text" name="username" placeholder="Email hoặc điện thoại" style="border: 1px solid #ccd0d5;border-radius:5px;font-size:15px;line-height:16px;padding:12px;margin-right:12px">
+                <input type="password" name="password" placeholder="Mật khẩu" style="border: 1px solid #ccd0d5;border-radius:5px;font-size:15px;line-height:16px;padding:12px;margin-right:12px">
+                <button class="btn btn-primary" type="submit" style="margin-right:12px">Đăng nhập</button>
+                <a href="" style="text-decoration:none;margin-right:20px" class=" align-content-center">Bạn quên tài khoản ư?</a>
+            </form>
         </nav>
         {% endif %}
         </div>
