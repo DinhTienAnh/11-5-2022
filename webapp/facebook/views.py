@@ -75,3 +75,8 @@ def test(request):
 def logoutUser(request):
     logout(request)
     return redirect('facebook:login')
+
+def messenger(request,pk):
+    user = CustomUser.objects.get(id = pk)
+    context = {'user':user}
+    return render(request, 'facebook/messenger.html',context)

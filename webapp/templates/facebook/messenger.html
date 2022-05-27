@@ -1,0 +1,113 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'facebook/css/bootstrap.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'facebook/mycss/profile.css'%}" />
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <title>Messenger</title>
+</head>
+
+<body>
+    <!-- Nav  -->
+    <div class="container-fluid sticky-top g-0">
+
+        <nav style="background-color: white;">
+            <div class="row ms-2 pt-2">
+                <div class="col-4">
+                    <div class="text-start" id="header-logo-search">
+                        <a href="{% url 'facebook:profile' user.id %}">
+                            <img height="40px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="" class="logo">
+                        </a>
+                        <input type="text" name="" id="" class="form-control ms-2 rounded-pill" placeholder="Tìm kiếm trên Facebook" style="background-color: #F0F2F5;">
+                    </div>
+
+                </div>
+                <div class="col-4">
+                    <ul class="nav justify-content-center text-center" id="middle-nav-item">
+                        <div class="col">
+                            <li class="nav-item" style="margin-right: 10px">
+                                <a class="nav-link" href="#">
+                                    <i class="fa-solid fa-house fa-2x"></i>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="col">
+                            <li class="nav-item" style="margin-right: 10px">
+                                <a class="nav-link" href="#"> <i class="fa-solid fa-video fa-2x"></i></a>
+                            </li>
+                        </div>
+                        <div class="col">
+                            <li class="nav-item" style="margin-right: 10px">
+                                <a class="nav-link" href="#"><i class="fa-solid fa-store fa-2x"></i></a>
+                            </li>
+                        </div>
+                        <div class="col">
+                            <li class="nav-item" style="margin-right: 10px">
+                                <a class="nav-link " href="#"><i class="fa-solid fa-gamepad fa-2x"></i></a>
+                            </li>
+                        </div>
+
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col-6 d-flex">
+                            <div class="col-6"></div>
+                            <div class="col-6 text-center">
+
+                                <a href="{% url 'facebook:profile' user.id%}" class="d-flex text-decoration-none">
+                                    <div class="d-flex">
+                                        <img height="40" src="{{user.avatar.url}}" alt="" id="avatar" class="rounded-circle shadow-4">
+                                        <div class="" style="color: black;font-size:14px">{{user.name}}
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-6 d-flex py-2 px-2">
+                            <div class="col btn-group">
+                                <i class="fa-solid fa-bars" id="right-nav-bar"></i>
+                            </div>
+                            <div class="col btn-group" id="right-nav-bar">
+                                <i class="fa-brands fa-facebook-messenger"> 
+                              </i>
+                            </div>
+                            <div class="col btn-group" id="right-nav-bar">
+                                <i class="fa-solid fa-bell">
+                              </i>
+                            </div>
+                            <div class="col btn-group" id="right-nav-bar">
+                                <i class="fa-solid fa-caret-down" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;"></i>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="{% url 'facebook:logout'%}">Đăng xuất</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </nav>
+        </div>
+        <!-- End Nav  -->
+        <div class="container-fluid">
+            <div class="Panel__left col-2">
+                <div class="Panel__left__nav d-flex">
+                    <div class="Panel__left__nav__headline flex-grow-1">Chat</div>
+                    <div class="Panel__left__nav__item mx-2"><i class="fa-solid fa-ellipsis"></i></div>
+                    <div class="Panel__left__nav__item mx-2"><i class="fa-solid fa-ellipsis"></i></div>
+                    <div class="Panel__left__nav__item mx-2"><i class="fa-solid fa-ellipsis"></i></div>
+                </div>
+            </div>
+            <div class="Panel__middle col"></div>
+            <div class="Panel__right col-3"></div>
+
+        </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</html>
