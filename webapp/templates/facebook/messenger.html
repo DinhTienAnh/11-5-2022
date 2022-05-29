@@ -8,7 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'facebook/css/bootstrap.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'facebook/mycss/messenger.css'%}" />
     <link rel="stylesheet" href="{% static 'facebook/mycss/profile.css'%}" />
+
     <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <title>Messenger</title>
 </head>
@@ -99,8 +101,15 @@
                 <div class="Panel__left__nav d-flex">
                     <div class="Panel__left__nav__headline flex-grow-1">Chat</div>
                     <div class="Panel__left__nav__item mx-2"><i class="fa-solid fa-ellipsis"></i></div>
-                    <div class="Panel__left__nav__item mx-2"><i class="fa-solid fa-ellipsis"></i></div>
-                    <div class="Panel__left__nav__item mx-2"><i class="fa-solid fa-ellipsis"></i></div>
+                    <div class="Panel__left__nav__item mx-2"><i class="fa-solid fa-video"></i></div>
+                    <div class="Panel__left__nav__item mx-2"><i class="fa-solid fa-plus"></i></div>
+                </div>
+                <div class="Panel__left__search px-2">
+                    <div class="Panel__left__search__back"></div>
+                    <div class="input-group input-group">
+                        <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fa-solid fa-search"></i></span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                    </div>
                 </div>
             </div>
             <div class="Panel__middle col"></div>
