@@ -15,9 +15,9 @@
     <title>Messenger</title>
 </head>
 
-<body>
+<body class="overflow-hidden">
     <!-- Nav  -->
-    <div class="container-fluid sticky-top g-0">
+    <div class="container-fluid sticky-top g-0 border-bottom">
 
         <nav style="background-color: white;">
             <div class="row ms-2 pt-2">
@@ -97,21 +97,270 @@
         </div>
         <!-- End Nav  -->
         <div class="container-fluid">
-            <div class="Panel__left col-2">
-                <div class="Panel__left__nav d-flex">
-                    <div class="Panel__left__nav__headline flex-grow-1">Chat</div>
-                    <div class="Panel__left__nav__item mx-2"><i class="fa-solid fa-ellipsis"></i></div>
-                    <div class="Panel__left__nav__item mx-2"><i class="fa-solid fa-video"></i></div>
-                    <div class="Panel__left__nav__item mx-2"><i class="fa-solid fa-plus"></i></div>
-                </div>
-                <div class="Panel__left__search px-2">
-                    <div class="Panel__left__search__back"></div>
-                    <div class="input-group input-group">
-                        <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fa-solid fa-search"></i></span>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+            <!-- Left Panel -->
+            <div class="Panel__left col-2 border-end">
+                <div class="Panel__left__nav border-bottom bg-secondary" style="height: 75px;">
+                    <div class="Panel__left__nav__1 d-flex">
+                        <div class="Panel__left__nav__headline flex-grow-1">Chat</div>
+                        <div class="Panel__left__nav__item mx-2"><i class="fa-solid fa-ellipsis"></i></div>
+                        <div class="Panel__left__nav__item mx-2"><i class="fa-solid fa-video"></i></div>
+                        <div class="Panel__left__nav__item mx-2"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                    <!-- Search -->
+                    <div class="Panel__left__search px-2">
+                        <div class="Panel__left__search__back"></div>
+                        <div class="input-group input-group">
+                            <span class="input-group-text" id="inputGroup-sizing-lg"><i class="fa-solid fa-search"></i></span>
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                        </div>
                     </div>
                 </div>
+
+                <div class="Panel__left__messages overflow-scroll" style="height:1000px;">
+                    <!-- Messages -->
+                    <div class="d-flex" style="margin:20px 0 20px 0;">
+                        <div class="col-2 ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="" height="50px">
+                        </div>
+                        <div class="col ms-2">
+                            <div class="Panel__left__message__username">
+                                <b>Tien Anh</b>
+                            </div>
+                            <div class="d-flex" style="color:gray;font-size:15px">
+                                <div>Message:sadasdasdasda</div>
+                                <div class="ms-2">20 gio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Message -->
+                    <!-- Messages -->
+                    <div class="d-flex" style="margin:20px 0 20px 0;">
+                        <div class="col-2 ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="" height="50px">
+                        </div>
+                        <div class="col ms-2">
+                            <div class="Panel__left__message__username">
+                                <b>Tien Anh</b>
+                            </div>
+                            <div class="d-flex" style="color:gray;font-size:15px">
+                                <div>Message:sadasdasdasda</div>
+                                <div class="ms-2">20 gio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Message -->
+                    <!-- Messages -->
+                    <div class="d-flex" style="margin:20px 0 20px 0;">
+                        <div class="col-2 ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="" height="50px">
+                        </div>
+                        <div class="col ms-2">
+                            <div class="Panel__left__message__username">
+                                <b>Tien Anh</b>
+                            </div>
+                            <div class="d-flex" style="color:gray;font-size:15px">
+                                <div>Message:sadasdasdasda</div>
+                                <div class="ms-2">20 gio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Message -->
+                    <!-- Messages -->
+                    <div class="d-flex" style="margin:20px 0 20px 0;">
+                        <div class="col-2 ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="" height="50px">
+                        </div>
+                        <div class="col ms-2">
+                            <div class="Panel__left__message__username">
+                                <b>Tien Anh</b>
+                            </div>
+                            <div class="d-flex" style="color:gray;font-size:15px">
+                                <div>Message:sadasdasdasda</div>
+                                <div class="ms-2">20 gio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Message -->
+                    <!-- Messages -->
+                    <div class="d-flex" style="margin:20px 0 20px 0;">
+                        <div class="col-2 ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="" height="50px">
+                        </div>
+                        <div class="col ms-2">
+                            <div class="Panel__left__message__username">
+                                <b>Tien Anh</b>
+                            </div>
+                            <div class="d-flex" style="color:gray;font-size:15px">
+                                <div>Message:sadasdasdasda</div>
+                                <div class="ms-2">20 gio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Message -->
+                    <!-- Messages -->
+                    <div class="d-flex" style="margin:20px 0 20px 0;">
+                        <div class="col-2 ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="" height="50px">
+                        </div>
+                        <div class="col ms-2">
+                            <div class="Panel__left__message__username">
+                                <b>Tien Anh</b>
+                            </div>
+                            <div class="d-flex" style="color:gray;font-size:15px">
+                                <div>Message:sadasdasdasda</div>
+                                <div class="ms-2">20 gio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Message -->
+                    <!-- Messages -->
+                    <div class="d-flex" style="margin:20px 0 20px 0;">
+                        <div class="col-2 ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="" height="50px">
+                        </div>
+                        <div class="col ms-2">
+                            <div class="Panel__left__message__username">
+                                <b>Tien Anh</b>
+                            </div>
+                            <div class="d-flex" style="color:gray;font-size:15px">
+                                <div>Message:sadasdasdasda</div>
+                                <div class="ms-2">20 gio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Message -->
+                    <!-- Messages -->
+                    <div class="d-flex" style="margin:20px 0 20px 0;">
+                        <div class="col-2 ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="" height="50px">
+                        </div>
+                        <div class="col ms-2">
+                            <div class="Panel__left__message__username">
+                                <b>Tien Anh</b>
+                            </div>
+                            <div class="d-flex" style="color:gray;font-size:15px">
+                                <div>Message:sadasdasdasda</div>
+                                <div class="ms-2">20 gio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Message -->
+                    <!-- Messages -->
+                    <div class="d-flex" style="margin:20px 0 20px 0;">
+                        <div class="col-2 ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="" height="50px">
+                        </div>
+                        <div class="col ms-2">
+                            <div class="Panel__left__message__username">
+                                <b>Tien Anh</b>
+                            </div>
+                            <div class="d-flex" style="color:gray;font-size:15px">
+                                <div>Message:sadasdasdasda</div>
+                                <div class="ms-2">20 gio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Message -->
+                    <!-- Messages -->
+                    <div class="d-flex" style="margin:20px 0 20px 0;">
+                        <div class="col-2 ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="" height="50px">
+                        </div>
+                        <div class="col ms-2">
+                            <div class="Panel__left__message__username">
+                                <b>Tien Anh</b>
+                            </div>
+                            <div class="d-flex" style="color:gray;font-size:15px">
+                                <div>Message:sadasdasdasda</div>
+                                <div class="ms-2">20 gio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Message -->
+                    <!-- Messages -->
+                    <div class="d-flex" style="margin:20px 0 20px 0;">
+                        <div class="col-2 ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="" height="50px">
+                        </div>
+                        <div class="col ms-2">
+                            <div class="Panel__left__message__username">
+                                <b>Tien Anh</b>
+                            </div>
+                            <div class="d-flex" style="color:gray;font-size:15px">
+                                <div>Message:sadasdasdasda</div>
+                                <div class="ms-2">20 gio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Message -->
+                    <!-- Messages -->
+                    <div class="d-flex" style="margin:20px 0 20px 0;">
+                        <div class="col-2 ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="" height="50px">
+                        </div>
+                        <div class="col ms-2">
+                            <div class="Panel__left__message__username">
+                                <b>Tien Anh</b>
+                            </div>
+                            <div class="d-flex" style="color:gray;font-size:15px">
+                                <div>Message:sadasdasdasda</div>
+                                <div class="ms-2">20 gio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Message -->
+                    <!-- Messages -->
+                    <div class="d-flex" style="margin:20px 0 20px 0;">
+                        <div class="col-2 ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="" height="50px">
+                        </div>
+                        <div class="col ms-2">
+                            <div class="Panel__left__message__username">
+                                <b>Tien Anh</b>
+                            </div>
+                            <div class="d-flex" style="color:gray;font-size:15px">
+                                <div>Message:sadasdasdasda</div>
+                                <div class="ms-2">20 gio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Message -->
+                    <!-- Messages -->
+                    <div class="d-flex" style="margin:20px 0 20px 0;">
+                        <div class="col-2 ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="" height="50px">
+                        </div>
+                        <div class="col ms-2">
+                            <div class="Panel__left__message__username">
+                                <b>Tien Anh</b>
+                            </div>
+                            <div class="d-flex" style="color:gray;font-size:15px">
+                                <div>Message:sadasdasdasda</div>
+                                <div class="ms-2">20 gio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Message -->
+                    <!-- Messages -->
+                    <div class="d-flex" style="margin:20px 0 20px 0;">
+                        <div class="col-2 ">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1365px-Facebook_f_logo_%282019%29.svg.png" alt="" height="50px">
+                        </div>
+                        <div class="col ms-2">
+                            <div class="Panel__left__message__username">
+                                <b>Tien Anh</b>
+                            </div>
+                            <div class="d-flex" style="color:gray;font-size:15px">
+                                <div>Message:sadasdasdasda</div>
+                                <div class="ms-2">20 gio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Message -->
+                </div>
+
             </div>
+            <!-- End Left Panel -->
             <div class="Panel__middle col"></div>
             <div class="Panel__right col-3"></div>
 
